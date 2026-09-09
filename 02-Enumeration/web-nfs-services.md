@@ -26,8 +26,8 @@ gobuster dir -u http://192.168.120.145:8080 -w /usr/share/dirbuster/wordlists/di
 * `404 Not Found`: Resource does not exist.
 
 **Critical Findings:** 
-* `http://192.168.120` (Configuration leakage potential).
-* `http://192.168.120` (Development endpoint exposed running **BoltWire**).
+* `http://192.168.120.145/app/config/config.yml` (Configuration leakage potential).
+* `http://192.168.120.145:8080/dev/` (Development endpoint exposed running **BoltWire**).
 
 ## 2.2 NFS Share Enumeration (Port 2049)
 The Nmap scan showed port 2049 (`nfs_acl`) active. The remote RPC target was queried to extract public mount points.
