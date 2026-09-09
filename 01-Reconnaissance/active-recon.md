@@ -24,7 +24,7 @@ nmap -sS -p- -vv 192.168.0.107 --min-rate 3000 -oA allports
 
 **Efficiency Trick:** The output was filtered using regular expressions (`grep` + `awk`) to extract only open ports into a clean, comma-separated list for subsequent targeted scans:
 ```bash
-cat allports.nmap | grep -oP "[0-9]{1,5}/tcp" | awk '{print \$1}' FS=/ | xargs | tr ' ' ','
+cat allports.nmap | grep -oP "[0-9]{1,5}/tcp" | awk '{print $1}' FS=/ | xargs | tr ' ' ','
 ```
 
 ### Targeted Service & Aggressive Enumeration
